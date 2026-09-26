@@ -1,0 +1,11 @@
+{
+  "username": "mohamed-abedeen",
+  "tagline": "Full-stack & mobile engineer building bilingual (AR/EN) web platforms and Flutter apps.",
+  "tags": ["Full-Stack", "AI Agents"],
+  "stats": ["repos", "contributions", "languages", "years"],
+  "techStack": [
+    "Flutter", "Dart", "Next.js", "React", "NestJS", "TypeScript", "Prisma",
+    "Tailwind CSS", "PostgreSQL", "Redis", "Supabase", "Firebase", "Docker", "Figma"
+  ],
+  "credit": true
+}

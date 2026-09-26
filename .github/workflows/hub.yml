@@ -1,0 +1,53 @@
+name: Profile hub
+
+on:
+  schedule:
+    - cron: "17 3 * * *" # daily, 03:17 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["hub/**", ".github/workflows/hub.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-hub
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: hub/requirements.txt
+
+      - run: pip install -r hub/requirements.txt
+
+      - name: Render hub.svg
+        run: python hub/generate.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # The card lives alone on the `output` branch, so daily refreshes don't pile up in main's history.
+      - name: Publish to the output branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git fetch --quiet --depth=1 origin output 2>/dev/null &&
+             git show FETCH_HEAD:hub.svg | cmp --silent - hub/dist/hub.svg; then
+            echo "hub.svg is unchanged"
+            exit 0
+          fi
+          cd hub/dist
+          git init --quiet --initial-branch=output
+          git add hub.svg
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit --quiet --message="Render hub.svg"
+          git push --quiet --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" output
