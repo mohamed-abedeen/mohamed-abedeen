@@ -1,0 +1,2 @@
+# Keep the card generator out of the profile's language stats.
+hub/** linguist-vendored
