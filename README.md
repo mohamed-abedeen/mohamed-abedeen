@@ -5,13 +5,17 @@
 
 ## Hi, I'm Mohammed 👋
 
-I design and ship bilingual, Arabic-first (RTL) products end to end, with **Next.js** and **NestJS** on the web and **Flutter** on mobile. Lately I've been wiring AI coding agents into real team workflows through the **Model Context Protocol (MCP)**.
+I design and ship bilingual, Arabic-first (RTL) products end to end, with **Next.js** and **NestJS** on the web and **Flutter** on mobile. I graduated in Information Technology (Mobile Computing) from the University of Tripoli, and I work agent-first with **Claude Code** and the **Model Context Protocol (MCP)**.
+
+### 💼 Work
+
+- **Automobility** (remote, 2026 – present): full-stack software engineer building enterprise web platforms in TypeScript monorepos with **NestJS**, **Next.js**, **PostgreSQL**, **Redis** and **Docker**.
 
 ### 🛠️ Things I've built
 
-- **[Tamakun PM](https://github.com/mohamed-abedeen/tamakun-pm-platform)**: a project-management platform where AI agents pull, work on and complete tasks over MCP, alongside Kanban boards, time tracking, realtime chat and analytics. I designed and built it end to end, and it runs in production at [pm.tamakun.sa](https://pm.tamakun.sa).
-- **[Best Shield B2B Centers](https://github.com/mohamed-abedeen/b2b-centers-showcase)**: a field-sales PWA for reps, with an offline visit queue, plus a dashboard for managers. I redesigned the login, worked on rep-facing features and fixed a CI/CD pipeline that was silently rolling back production deploys. Live at [b2b-centers.tamakun.sa](https://b2b-centers.tamakun.sa).
 - **[DevFlow](https://github.com/mohamed-abedeen/devflow)**: a self-hosted, GitHub-integrated project manager for dev teams, built with Next.js 14, NestJS 10, Prisma and PostgreSQL.
+- **[UOT Exam Print Booking](https://github.com/mohamed-abedeen/UOT_Exam_Print_Booking)**: a University of Tripoli project: an Arabic-only, RTL booking system where each college's exam office reserves time at the print centre, with machine scheduling by job size, stock and hand-over tracking, and three roles (college, operator, admin). Built with **Next.js**, **TypeScript**, **PostgreSQL**, **Drizzle** and **Docker Compose**. No exam file is ever uploaded or stored.
+- **[UOT ID System](https://github.com/mohamed-abedeen/UOT_ID_Releases)**: a University of Tripoli project: an employee ID system. Installers are published in the releases repo; the source code is private.
 - **[My Gym Bro](https://github.com/mohamed-abedeen/my_gym_bro)**: a Flutter fitness tracker with an offline-first local database, Supabase sync and in-app subscriptions.
 - **[Yaqdah](https://github.com/mohamed-abedeen/yaqdah_app_project)**: a Flutter app that spots driver drowsiness with on-device face detection, points you to nearby places to rest and can text your location to an emergency contact.
 
